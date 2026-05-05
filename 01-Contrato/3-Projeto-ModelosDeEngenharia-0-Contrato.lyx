@@ -1,0 +1,986 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+%-----------------------------------------------------------------
+% Para incluir formatações especificas para apresentações
+%-----------------------------------------------------------------
+%https://tex.stackexchange.com/questions/5894/latex-conditional-expression
+% Abaixo inserimos o pacote etoolbox que permite a gestão de if..else
+\usepackage{etoolbox}
+% Cria o flag
+\newtoggle{FormatoApresentacaoTRUE}
+\newtoggle{IncluirBibliografiaNoCapituloTRUE}
+%Seta o flag - deixe true se for para gerar apresentação de aula e false para formato livro
+%\toggletrue{FormatoApresentacaoTRUE}
+\togglefalse{FormatoApresentacaoTRUE}
+%\toggletrue{IncluirBibliografiaNoCapituloTRUE}
+\togglefalse{IncluirBibliografiaNoCapituloTRUE}
+
+% Para usar no meio dos arquivos do lyx crie um comando latex e cole o texto abaixo
+%\iftoggle{FormatoApresentacaoTRUE}{..verdadeiro..}{..falso..}
+%\iftoggle{FormatoApresentacaoTRUE}{\newpage}{}
+
+%---------------------------------------------------------------
+% Para adicionar/excluir uma seção inteira
+%---------------------------------------------------------------
+%https://tex.stackexchange.com/questions/193295/lyx-conditional-sections
+% Abaixo criamos um novo if
+\newif\ifIncluirSecaoProgramacaoAvancada
+%\FormatoApresentacaoWidefalse
+\IncluirSecaoProgramacaoAvancadatrue
+% Para usar
+% \ifIncluirSecaoProgramacaoAvancada no início do blobo
+% \fi para finalizar o bloco
+
+%---------------------------------------------------------------
+%GERAL
+%---------------------------------------------------------------
+\usepackage{verbatim}
+%%\usepackage{algorithm}
+\usepackage{fancyvrb}
+\usepackage{keyval} 
+\usepackage{indentfirst}
+%\usepackage{color}
+\usepackage{xcolor}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+\definecolor{BLACK}{rgb}{0,0,0}%   rgb color model
+\definecolor{BLUE}{rgb}{0,0,1}%   rgb color model
+
+%Informa que vai usar o pacote listings, disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+
+%Define um novo comando, chamado lst
+%observe que lst chama o comando  lstinputlisting.
+\newcommand{\lst}[2]{%
+    \noindent\rule[-1ex]{\textwidth}{0.3mm}\vspace{-1ex}
+    \lstinputlisting[caption={#2},label={#1},stringspaces=false,frame={tb},lineskip=-1pt,extendedchars=true,%
+    basicstyle=\footnotesize\tt,labelstep=1,labelstyle=\tiny,indent=2em,language=Java,breaklines]{#1}
+    \vspace{1ex}%
+}
+
+%\listfiles
+%\usepackage[]{hyperref}
+
+%\usepackage{mathptmx}  % instead of package times
+
+%\usepackage[scaled=0.9]{helvet} % or [scaled=0.92], if you like
+
+%% Pacote de citações para formato abnt
+%%\usepackage[num]{abntcite}
+%%\usepackage[alf]{abntcite}
+
+%%\usepackage[cam,a4,center]{crop}
+%% a4 é o tamanho físico
+%% center é para centralizar
+%% cam inclui quatro marcas diferentes
+
+%%\usepackage[cam,width=20truecm,height=28truecm,center]{crop}
+%\usepackage[cam,width=18truecm,height=26truecm,center]{crop}
+
+%\noindent
+\end_preamble
+\use_default_options false
+\master 3-Projeto-ModelosDeEngenharia-Master.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement ph
+\float_alignment class
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Didática
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Didática"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O objetivo didático é implementar a 
+\emph on
+Aprendizagem Baseada em Projetos (PBL)
+\emph default
+ e 
+\emph on
+simulação de papéis
+\emph default
+ (
+\emph on
+Role-Playing
+\emph default
+).
+ Simular uma situação real do relacionamento entre clientes e empresas de engenharia.
+ 
+\end_layout
+
+\begin_layout Standard
+A dinâmica emula o ciclo inicial de engenharia de requisitos e a comunicação (frequentemente ruidosa) entre:
+\end_layout
+
+\begin_layout Itemize
+"O Cliente" que entende da física/fenômeno do problema,
+ normalmente um geólogo,
+ geofísico,
+ engenheiro 
+\end_layout
+
+\begin_layout Itemize
+"O Engenheiro de Software/Projetista",
+ que fará a modelagem do sistema de engenharia.
+\end_layout
+
+\begin_layout Section*
+Limites
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+O limite tem fins didáticos e é estabelecido apenas para que o problema seja resolvido em curto espaço de tempo.
+ Problemas reais são bem mais complexos e detalhados.
+ 
+\end_layout
+
+\end_inset
+
+ Estritos Recomendados (O Escopo) 
+\end_layout
+
+\begin_layout Standard
+Para garantir que as duplas consigam entregar os diagramas no prazo,
+ os alunos clientes devem preencher um "Template de Especificação" contendo,
+ no máximo,
+ os seguintes itens:
+\end_layout
+
+\begin_layout Itemize
+Tema/Problema de Engenharia:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Restrito a um cálculo ou simulação simplificada (ex:
+ coleta e análise de amostras catalogadas;
+ processamento de dados de um ensaio de campo;
+ cálculo básico de propriedades de rochas;
+ análise de dados de perfis;
+ análise geofísica;
+ processamento de dados de fluidos;
+ análise de dados de reservatório;
+ simulação simples de sistemas simples aplicados a engenharia de reservatório,
+ poço,
+ elevação e escoamento).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Atores (Usuários):
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Máximo de 2
+\end_layout
+
+\begin_layout Itemize
+(ex:
+ Usuário,
+ Operador de Laboratório,
+ Sistema de Aquisição de Dados,
+ Sistema Gerador de Gráficos).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requisitos Funcionais (RF):
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 a 4 requisitos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ex:
+ RF1 - O sistema deve ler um arquivo com as leituras de pressão e vazão.
+ RF2 - O sistema deve calcular a permeabilidade.
+ RF3 - O sistema deve gerar um relatório binarizado de falhas.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requisitos Não Funcionais (RNF):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+1 a 2 requisitos,
+ focados em engenharia de software 
+\end_layout
+
+\begin_layout Itemize
+Ex:
+ RNF1 - A modelagem deve prever o encapsulamento estrito visando codificação em C++ moderno.
+ RNF2 - O tempo de processamento das matrizes não deve exceder 2 segundos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Casos de Uso Principais:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Exigir apenas 1 ou 2 cenários (O "Caminho Feliz" do cálculo e 1 fluxo de exceção,
+ como "Dados de entrada inconsistentes").
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Metodologia
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:metodologia"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+metodologia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Metodologia utilizada no desenvolvimento do sistema"
+nolink "false"
+
+\end_inset
+
+ apresenta a metodologia a ser utilizada no desenvolvimento do sistema (modelos).
+\end_layout
+
+\begin_layout Itemize
+Para facilitar disponibilizamos um repositório modelo deste micro-projeto de engenharia.
+ O mesmo pode ser clonado:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-3-MicroProjetoSoftware-TituloProjeto"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/bueno/Dropbox/05-Gestao/Modelos/Modelos-Documentos-Diretorios/LDSC-ProjetoEngenharia-3-MicroProjetoSoftware-TituloProjeto/imagens/EngenhariaSoftware-ModeloFinal6-Wide.png
+	lyxscale 50
+	width 100text%
+	height 80theight%
+	keepAspectRatio
+	special height=0.8\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metodologia utilizada no desenvolvimento do sistema
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Metodologia utilizada no desenvolvimento do sistema"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\begin_layout Chapter*
+Contrato de Prestação de Serviços de Engenharia de Software
+\end_layout
+
+\begin_layout Standard
+Pelo presente instrumento particular,
+ de um lado,
+ doravante denominado simplesmente CONTRATANTE (Grupo Cliente),
+ e,
+ de outro lado,
+ doravante denominado simplesmente CONTRATADA (Grupo Executor),
+ celebram o presente 
+\emph on
+Contrato de Prestação de Serviços de Engenharia de Software
+\emph default
+,
+ mediante as cláusulas e condições a seguir estipuladas.
+\end_layout
+
+\begin_layout Itemize
+CLÁUSULA 1 - DO OBJETO
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+O presente contrato tem por objeto a especificação,
+ modelagem UML e futuro desenvolvimento de um software aplicativo voltado à resolução de um problema específico de Engenharia de Petróleo,
+ em conformidade estrita com as metodologias apresentadas na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Metodologia utilizada no desenvolvimento do sistema"
+
+\end_inset
+
+ e nas referencias 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "prog-UML-Rumbaugh,adb-prog-livroCpp,prog-UML-blaha"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CLÁUSULA 2 - ESCOPO DO PROBLEMA DE ENGENHARIA
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+[Nesta seção,
+ a CONTRATANTE deve descrever de forma concisa o fenômeno físico ou de geociências ou engenharia a ser modelado,
+ bem como as bibliotecas fundamentais que integrarão a solução,
+ como exemplo bibliotecas de ajuste polinomial e processamento estatístico.]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+2.1.
+ Cenários Textuais de Uso do Sistema
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A fim de delimitar a fronteira de interação entre os atores e o sistema,
+ ficam estabelecidos os cenários principais de uso abaixo descritos:
+\end_layout
+
+\begin_layout Itemize
+Cenário 1 (Caminho Feliz):
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Texto escrito pela equipe cliente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[Descrever passo a passo a interação principal do usuário com o sistema.
+ Ex:
+ O Operador carrega o arquivo de dados de campo ruidosos,
+ o sistema aplica o filtro estatístico e retorna a curva ajustada pelo polinômio.]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cenário 2 (Fluxo de Exceção):
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Texto escrito pela equipe cliente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[Descrever uma interação onde ocorre um erro ou desvio físico.
+ Ex:
+ O Operador insere dados fora da janela de profundidade válida para a bacia,
+ e o sistema emite um alerta de inconsistência.]
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+CLÁUSULA 3 - PRAZOS E CRONOGRAMA (
+\emph on
+SPRINT
+\emph default
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As partes acordam o seguinte cronograma de entregas técnicas,
+ sujeito à validação da CONTRATANTE:
+\end_layout
+
+\begin_layout Itemize
+Dia 1:
+ Concepção Preliminar e Proposta (Em Sala e Em Casa) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cliente:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Elabora e entrega o Documento de Escopo
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Problema vinculado ao curso de engenharia
+\end_layout
+
+\end_inset
+
+ e Requisitos,
+ contendo 1 ou 2 cenários textuais de uso.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Executor (Pré-venda):
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Monta a Proposta Técnica contendo uma elaboração preliminar do problema(o que entenderam),
+ primeira versão do Diagrama de Casos de Uso (Concepção),
+ esboço do Diagrama de Classes (Domínio) e primeiro rascunho do Diagrama de Sequência.
+ Orçamento e Cronograma Preliminar.
+\end_layout
+
+\begin_layout Itemize
+Entrega:
+ Via e-mail ou repositório temporário para avaliação do cliente.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cliente (Em casa):
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Revisão da proposta enviada pelo executor e preparação de dúvidas.
+\end_layout
+
+\begin_layout Itemize
+Verificar se houve um claro entendimento do problema a ser resolvido.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Dia 2:
+ Elaboração,
+ Contratação e Análise OO (Reunião Formal e Em Casa)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reunião Formal:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Executor apresenta competências da equipe (histórico de projetos desenvolvidos - 
+\emph on
+marketing
+\emph default
+);
+ soluções arquiteturais desenvolvidas (modelos uml),
+ orçamento e cronograma preliminar.
+\end_layout
+
+\begin_layout Itemize
+Cliente analisa,
+ aprofunda os requisitos técnicos (cálculos,
+ física,
+ química,
+ engenharia) e valida a viabilidade técnica.
+\end_layout
+
+\begin_layout Itemize
+Negociação e Assinatura deste Contrato
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+usem o govbr;
+ este contrato não tem valor legal é um exemplo de sala de aula
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Executor (Em casa):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Configuração oficial do Repositório Git/GitHub (aplicação de versionamento inicial).
+ Clonar o 
+\begin_inset CommandInset href
+LatexCommand href
+name "repositório modelo"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-3-MicroProjetoSoftware-TituloProjeto"
+literal "false"
+
+\end_inset
+
+,
+ adicionar membros (clientes e equipe desenvolvimento).
+\end_layout
+
+\begin_layout Itemize
+Execução da fase de Elaboração:
+ Montagem do Diagrama de Pacotes / Assuntos.
+ Estudo do problema.
+\end_layout
+
+\begin_layout Itemize
+Consolidação da Análise OO:
+ Montagem dos Diagramas de Casos de Uso Específicos,
+ Classes,
+ Sequência (cenários principais),
+ Comunicação e Máquina de Estado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Documentação para apresentação formal.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Dia 3:
+ Projeto do Sistema e Revisão (Reunião Formal e Em Casa)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reunião Formal:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Executor apresenta o modelo de Análise OO consolidado.
+\end_layout
+
+\begin_layout Itemize
+Cliente comenta,
+ critica e solicita correções formais.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Executor (Em casa):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Definições de Projeto do Sistema:
+ Definição formal de Arquitetura,
+ Bibliotecas (Polinômios/Estatística) e encapsulamento em C++
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+O cliente exige C++ porque quer alto desempenho e economia de energia (é um ambientalista).
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Projeto OO:
+ Criação do Diagrama de Componentes e Diagrama de Implantação (
+\emph on
+hardware/cluster
+\emph default
+).
+\end_layout
+
+\begin_layout Itemize
+Revisão e refatoração de todos os diagramas UML com base na arquitetura definida.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Dia 4:
+ Entrega da Modelagem Abrangente e Montagem do Backlog (Reunião Formal)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reunião Formal:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Executor apresenta a documentação final do Ciclo de Concepção e Análise.
+\end_layout
+
+\begin_layout Itemize
+Cliente:
+ Realiza o aceite técnico formal da documentação e decide sobre a continuidade para os ciclos de planejamento e construção
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se o resultado é satisfatório contrate para próxima etapa;
+ se for mediano
+\end_layout
+
+\begin_layout Plain Layout
+ruim,
+ seja gentil,
+ mas não de continuidade,
+ procure outra equipe para dar continuidade.
+ Nada de tapinha nas costas,
+ se ficou insatisfeito procure outra equipe,
+ haja com profissionalismo.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Marco Final (
+\emph on
+Deliverable
+\emph default
+):
+ O Executor extrai dos modelos UML aprovados e entrega a Lista de Características (Backlog do Produto),
+ fatiando o escopo em entregas $c_1,
+ c_2...
+ c_n$,
+ habilitando o início imediato do Ciclo de Planejamento e Construção Iterativa.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+CLÁUSULA 4 - CUSTOS E CONDIÇÕES DE PAGAMENTO
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A remuneração pelo projeto baseia-se no esforço de engenharia empregado na especificação e codificação.
+\end_layout
+
+\begin_layout Itemize
+4.1.
+ Valor da Hora de Engenharia de Software:
+ R$ 350,00.
+\end_layout
+
+\begin_layout Itemize
+4.2.
+ Custo Total Estimado para o MVP (
+\emph on
+Minimum Viable Product
+\emph default
+):
+ [Definir valor baseado no esforço de modelagem - sugerido 40h de engenharia].
+\end_layout
+
+\begin_layout Itemize
+4.3.
+ Os recursos computacionais físicos para compilação e teste final são de inteira responsabilidade da CONTRATADA.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CLÁUSULA 5 - REQUISITOS TECNOLÓGICOS E EFICIÊNCIA ENERGÉTICA
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fica estabelecido que a implementação final da arquitetura modelada deverá ser conduzida na linguagem C++ (padrões modernos 20,
+ 23 ou 26).
+ Esta exigência contratual é inegociável e visa garantir não apenas a máxima performance de execução (cálculos massivos de engenharia),
+ mas também a eficiência energética e ecológica,
+ mitigando o desperdício de processamento,
+ consumo de energia e recursos naturais frequentemente associados a linguagens interpretadas e antiecológicas.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CLÁUSULA 6 - SIGILO E PROPRIEDADE INTELECTUAL
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A CONTRATADA compromete-se a manter absoluto sigilo sobre os dados de campo,
+ perfis de poços e amostras de laboratório fornecidos pela CONTRATANTE.
+ 
+\end_layout
+
+\begin_layout Itemize
+O código-fonte C++ desenvolvido e a modelagem UML (diagramas e arquivos LyX) serão de propriedade exclusiva da CONTRATANTE após o aceite final.
+\end_layout
+
+\begin_layout Itemize
+Todo o projeto é armazenado e disponibilizado sobre a licença GPL no site 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.github/ldsc"
+literal "false"
+
+\end_inset
+
+ em repositório específico a ser criado.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CLÁUSULA 7 - FORO
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fica eleito o foro da sala de aula,
+ Juiz Prof.
+ André D.
+ Bueno,
+ para dirimir quaisquer controvérsias oriundas da execução deste contrato de engenharia.
+\end_layout
+
+\begin_layout Itemize
+Macaé - RJ,
+ ____ de ___________________ de 202_.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+_________________________________________
+\end_layout
+
+\begin_layout Standard
+CONTRATANTE (Engenheiro Cliente)
+\end_layout
+
+\begin_layout Standard
+Grupo:
+ 
+\end_layout
+
+\begin_layout Standard
+Engenheiro _______________________ Assinatura:
+ _______________________ 
+\end_layout
+
+\begin_layout Standard
+Engenheiro _______________________ Assinatura:
+ _______________________ 
+\end_layout
+
+\begin_layout Standard
+_________________________________________
+\end_layout
+
+\begin_layout Standard
+CONTRATADA (Engenheiro Executor)
+\end_layout
+
+\begin_layout Standard
+Grupo:
+ 
+\end_layout
+
+\begin_layout Standard
+Engenheiro _______________________ Assinatura:
+ _______________________ 
+\end_layout
+
+\begin_layout Standard
+Engenheiro _______________________ Assinatura:
+ _______________________ 
+\end_layout
+
+\begin_layout Standard
+_____________________________________________ 
+\end_layout
+
+\begin_layout Standard
+Testemunha / Gestor de Projeto (Professor André Bueno)
+\end_layout
+
+\end_body
+\end_document

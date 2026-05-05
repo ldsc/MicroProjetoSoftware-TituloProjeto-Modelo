@@ -1,0 +1,52 @@
+#+TITLE: CHECKLIST: Dinâmica de Projeto - Engenharia de Software (Cliente & Executor)
+
+* ETAPA 1: Dia 1 - Concepção Preliminar e Proposta
+** Ações do Cliente (Em Sala / Em Casa)
+*** [ ] Elaborar e entregar o Documento de Escopo e Requisitos[cite: 6].
+*** [ ] Incluir 1 a 2 cenários textuais de uso no documento[cite: 6].
+*** [ ] Revisar a proposta preliminar enviada pelo executor em casa[cite: 6].
+*** [ ] Verificar se o executor demonstrou um claro entendimento do problema fenomenológico a ser resolvido[cite: 6].
+** Ações do Executor (Pré-venda)
+*** [ ] Montar a Proposta Técnica contendo o entendimento preliminar do problema[cite: 6].
+*** [ ] Criar a primeira versão do Diagrama de Casos de Uso (Concepção)[cite: 6].
+*** [ ] Elaborar o esboço do Diagrama de Classes focando no Domínio do problema[cite: 6].
+*** [ ] Desenhar o primeiro rascunho do Diagrama de Sequência[cite: 6].
+*** [ ] Montar a estimativa de Orçamento e o Cronograma Preliminar[cite: 6].
+*** [ ] Entregar a proposta ao Cliente via e-mail ou repositório temporário para avaliação[cite: 6].
+
+* ETAPA 2: Dia 2 - Elaboração, Contratação e Análise OO
+** Reunião Formal (Cliente & Executor)
+*** [ ] Executor apresenta as competências da equipe, histórico de projetos e soluções arquiteturais (modelos UML preliminares)[cite: 6].
+*** [ ] Executor apresenta formalmente o orçamento e cronograma preliminar[cite: 6].
+*** [ ] Cliente analisa a proposta, aprofunda os requisitos técnicos (cálculos, física, engenharia) e valida a viabilidade técnica da equipe[cite: 6].
+*** [ ] Realizar a negociação final e assinatura do Contrato de Prestação de Serviços[cite: 6].
+** Ações do Executor (Em Casa)
+*** [ ] Configurar oficialmente o Repositório Git/GitHub e clonar o repositório modelo[cite: 6].
+*** [ ] Adicionar os membros de ambas as equipes (clientes e desenvolvedores) ao repositório[cite: 6].
+*** [ ] Executar a fase de Elaboração através da montagem do Diagrama de Pacotes / Assuntos[cite: 6].
+*** [ ] Consolidar a Análise OO construindo os Diagramas de Casos de Uso Específicos e Diagramas de Classes[cite: 6].
+*** [ ] Montar o Diagrama de Sequência detalhado para os cenários principais[cite: 6].
+*** [ ] Desenvolver os Diagramas de Comunicação e de Máquina de Estado[cite: 6].
+*** [ ] Preparar e formatar a documentação (arquivos LyX) para a apresentação formal do próximo encontro[cite: 6].
+
+* ETAPA 3: Dia 3 - Projeto do Sistema e Revisão
+** Reunião Formal (Cliente & Executor)
+*** [ ] Executor apresenta ao Cliente o modelo de Análise OO consolidado[cite: 6].
+*** [ ] Cliente comenta, critica e solicita correções formais sobre as falhas e melhorias da modelagem[cite: 6].
+** Ações do Executor (Em Casa)
+*** [ ] Fazer as Definições do Projeto do Sistema, estabelecendo formalmente a Arquitetura[cite: 6].
+*** [ ] Especificar a integração com as Bibliotecas exigidas (Polinômios e Estatística)[cite: 6].
+*** [ ] Definir o encapsulamento estrito visando codificação em C++ moderno para eficiência energética[cite: 6].
+*** [ ] Criar o Diagrama de Componentes (Projeto Orientado a Objeto)[cite: 6].
+*** [ ] Criar o Diagrama de Implantação focado no hardware/cluster[cite: 6].
+*** [ ] Revisar e refatorar todos os diagramas UML anteriores com base na nova arquitetura definida[cite: 6].
+
+* ETAPA 4: Dia 4 - Entrega da Modelagem e Backlog
+** Reunião Formal (Cliente & Executor)
+*** [ ] Executor apresenta e entrega a documentação final do Ciclo de Concepção e Análise[cite: 6].
+*** [ ] Cliente emite o "aceite técnico" formal aprovando a documentação entregue[cite: 6].
+*** [ ] Cliente decide e informa oficialmente sobre a continuidade da equipe para o ciclo de codificação[cite: 6].
+** Ações do Executor (Marco Final - Deliverable)
+*** [ ] Extrair dos modelos UML finais aprovados a Lista de Características (Backlog do Produto)[cite: 6].
+*** [ ] Fatiar o escopo do projeto em entregas menores (c_1, c_2... c_n)[cite: 6].
+*** [ ] Organizar o repositório para o início imediato do Ciclo de Planejamento e Construção Iterativa[cite: 6].
