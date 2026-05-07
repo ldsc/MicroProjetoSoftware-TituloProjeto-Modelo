@@ -111,7 +111,8 @@
 \bibtex_command default
 \index_command default
 \float_placement ph
-\paperfontsize 12
+\float_alignment class
+\paperfontsize 11
 \spacing onehalf
 \use_hyperref false
 \papersize a4
@@ -199,7 +200,6 @@ Role-Playing
 \emph default
 ).
  Simular uma situação real do relacionamento entre clientes e empresas de engenharia.
- 
 \end_layout
 
 \begin_layout Standard
@@ -210,7 +210,7 @@ A dinâmica emula o ciclo inicial de engenharia de requisitos e a comunicação 
 "O Cliente" que entende da física/fenômeno do problema,
  normalmente um geólogo,
  geofísico,
- engenheiro 
+ engenheiro.
 \end_layout
 
 \begin_layout Itemize
@@ -243,7 +243,6 @@ Para garantir que as duplas consigam entregar os diagramas no prazo,
 
 \begin_layout Itemize
 Tema/Problema de Engenharia:
- 
 \end_layout
 
 \begin_deeper
@@ -264,7 +263,6 @@ Restrito a um cálculo ou simulação simplificada (ex:
 \end_deeper
 \begin_layout Itemize
 Atores (Usuários):
- 
 \end_layout
 
 \begin_deeper
@@ -283,13 +281,11 @@ Máximo de 2
 \end_deeper
 \begin_layout Itemize
 Requisitos Funcionais (RF):
- 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 3 a 4 requisitos.
- 
 \end_layout
 
 \begin_layout Itemize
@@ -365,7 +361,8 @@ nolink "false"
 \end_layout
 
 \begin_layout Itemize
-Um repositório este micro-projeto pode ser clonado do modelo:
+Para facilitar disponibilizamos um repositório modelo deste micro-projeto de engenharia.
+ O mesmo pode ser clonado:
 \end_layout
 
 \begin_deeper
@@ -443,7 +440,11 @@ Pelo presente instrumento particular,
  e,
  de outro lado,
  doravante denominado simplesmente CONTRATADA (Grupo Executor),
- celebram o presente Contrato de Prestação de Serviços de Engenharia de Software,
+ celebram o presente 
+\emph on
+Contrato de Prestação de Serviços de Engenharia de Software
+\emph default
+,
  mediante as cláusulas e condições a seguir estipuladas.
 \end_layout
 
@@ -452,7 +453,7 @@ CLÁUSULA 1 - DO OBJETO
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Itemize
 O presente contrato tem por objeto a especificação,
  modelagem UML e futuro desenvolvimento de um software aplicativo voltado à resolução de um problema específico de Engenharia de Petróleo,
  em conformidade estrita com as metodologias apresentadas na Figura 
@@ -479,33 +480,185 @@ CLÁUSULA 2 - ESCOPO DO PROBLEMA DE ENGENHARIA
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-[Nesta seção,
- a CONTRATANTE deve descrever de forma concisa o fenômeno físico ou geológico a ser modelado,
- bem como as bibliotecas fundamentais que integrarão a solução,
- tais como as bibliotecas de ajuste polinomial e processamento estatístico.]
+\begin_layout Itemize
+
+\series bold
+Objetivo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ex:
+ O 
+\series bold
+PercolaEdu
+\series default
+ 
+\series bold
+2D
+\series default
+ é um software educativo interativo desenvolvido para auxiliar estudantes do ensino médio e superior (Física,
+ Matemática,
+ Ciência da Computação,
+ Engenharia) a compreenderem os conceitos de probabilidade,
+ transição de fase,
+ conectividade e teoria dos grafos através do modelo de percolação de sítios em malhas bidimensionais (2D).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-2.1.
- Cenários Textuais de Uso do Sistema
+
+\series bold
+Público-Alvo:
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Itemize
+Alunos do ensino médio avançado.
+\end_layout
+
+\begin_layout Itemize
+Estudantes de graduação em Ciências Exatas.
+\end_layout
+
+\begin_layout Itemize
+Professores que necessitam de ferramentas visuais para demonstrar fenômenos críticos e estatísticos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Especificação:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ex:
+ O software educativo 
+\series bold
+PercolaEdu
+\series default
+ 
+\series bold
+2D
+\series default
+,
+ com licença GPL - livre,
+ deve ser multiplataforma,
+ usar linguagem de alto desempenho (C++) e ter uma interface em modo terminal - CLI.
+ O simulador deve permitir a entrada de dados da rede de percolação,
+ suas dimensões 
+\begin_inset Formula $Mx$
+\end_inset
+
+,
+ 
+\begin_inset Formula $Ny$
+\end_inset
+
+,
+ e 
+\begin_inset Formula $p$
+\end_inset
+
+ a probabilidade de ativação de cada sítio.
+ Podendo,
+ opcionalmente informar o modelo de distribuição a ser utilizado para determinar a probabilidade 
+\begin_inset Formula $p$
+\end_inset
+
+ (distribuição uniforme,
+ normal,
+ Bernoulli,
+ 
+\emph on
+T-Student
+\emph default
+) e o modelo de vizinhança pode ser de faces diretas ou faces e cantos.
+ Deve ser possível gerar redes únicas para estudo de um caso específico (um único valor de 
+\begin_inset Formula $p$
+\end_inset
+
+) ou situações em que o valor da probabilidade 
+\begin_inset Formula $p$
+\end_inset
+
+ cresce até que ocorra a percolação.
+ Os resultados devem incluir a informação se ocorre ou não a percolação ou seja,
+ se existe um caminho contínuo de sítios ocupados conectando o topo à base (ou a esquerda à direita) da malha.
+ As imagens resultantes devem ser salvas e opcionalmente visualizadas.
+ Os algoritmos de agrupamento devem incluir a busca profunda e Hoshen-Kopelman.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Cenários:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 A fim de delimitar a fronteira de interação entre os atores e o sistema,
  ficam estabelecidos os cenários principais de uso abaixo descritos:
 \end_layout
 
 \begin_layout Itemize
-Cenário 1 (Caminho Feliz):
+Cenário 1:
  
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Texto escrito pela equipe cliente
+ex:
+ O software permitirá que o usuário crie uma malha (
+\emph on
+grid
+\emph default
+) de tamanho 
+\begin_inset Formula $Mx,Ny$
+\end_inset
+
+.
+ Cada "sítio" (célula) da malha será ocupado com uma probabilidade 
+\begin_inset Formula $p$
+\end_inset
+
+ ou vazio com probabilidade 
+\begin_inset Formula $1-p$
+\end_inset
+
+.
+ O sistema deve identificar visualmente os "
+\emph on
+clusters
+\emph default
+" (agrupamentos de sítios vizinhos ocupados) e determinar se houve a percolação,
+ ou seja,
+ se existe um caminho contínuo de sítios ocupados conectando o topo à base (ou a esquerda à direita) da malha.
 \end_layout
 
 \end_inset
@@ -513,42 +666,300 @@ Texto escrito pela equipe cliente
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-[Descrever passo a passo a interação principal do usuário com o sistema.
- Ex:
- O Operador carrega o arquivo de dados de campo ruidosos,
- o sistema aplica o filtro estatístico e retorna a curva ajustada pelo polinômio.]
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
-Cenário 2 (Fluxo de Exceção):
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Texto escrito pela equipe cliente
+Cenário 2:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+ex:
+ O sistema não percolou e é necessário aumentar a probabilidade 
+\begin_inset Formula $p$
 \end_inset
 
+.
+ Ou seja,
+ é iterativo.
+ Mostra o passo a passo.
+\end_layout
 
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Requisitos:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+RF - Requisito Funcional
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[Descrever uma interação onde ocorre um erro ou desvio físico.
- Ex:
- O Operador insere dados fora da janela de profundidade válida para a bacia,
- e o sistema emite um alerta de inconsistência.]
+ID,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nome,
+\end_layout
+
+\begin_layout Itemize
+Descrição,
+\end_layout
+
+\begin_layout Itemize
+Prioridade
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RF01,
+ - O QUE TEMOS ABAIXO SÃO EXEMPLOS - REFAÇA
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Configuração da Malha
+\end_layout
+
+\begin_layout Itemize
+O usuário deve poder definir o tamanho da malha quadrada inserindo um valor N (ex:
+ de 10 a 500)
+\end_layout
+
+\begin_layout Itemize
+Alta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RF02,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Definição da Probabilidade (p)
+\end_layout
+
+\begin_layout Itemize
+O usuário deve poder ajustar a probabilidade de ocupação dos sítios usando um controle deslizante (
+\emph on
+slider
+\emph default
+) ou caixa de texto,
+ com valores entre 0.000 e 1.000.
+\end_layout
+
+\begin_layout Itemize
+Alta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RF03,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Geração Aleatória
+\end_layout
+
+\begin_layout Itemize
+O sistema deve gerar a rede preenchendo os sítios aleatoriamente com base na probabilidade 
+\begin_inset Formula $p$
+\end_inset
+
+ definida no RF02
+\end_layout
+
+\begin_layout Itemize
+Alta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RF04,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Identificação de 
+\emph on
+Clusters
+\emph default
+,
+\end_layout
+
+\begin_layout Itemize
+O algoritmo (ex:
+ 
+\emph on
+Union-Find
+\emph default
+ ou Busca em Profundidade - DFS) deve agrupar sítios adjacentes ortogonalmente.
+ Cada 
+\emph on
+cluster
+\emph default
+ distinto deve receber uma cor diferente na interface gráfica
+\end_layout
+
+\begin_layout Itemize
+Alta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RF05,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Detecção de Percolação
+\end_layout
+
+\begin_layout Itemize
+O sistema deve verificar automaticamente se o maior 
+\emph on
+cluster
+\emph default
+ conecta as bordas opostas (topo-base ou esquerda-direita) e destacar esse ""
+\emph on
+cluster
+\emph default
+ perolante"" com uma cor especial (ex:
+ vermelho brilhante).
+\end_layout
+
+\begin_layout Itemize
+Alta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+RNF - Requisito Não Funcional
+\end_layout
+
+\begin_layout Itemize
+RNF01 - Plataforma:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O software deve ser uma aplicação modo terminal multiplataforma
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RNF02 - Tecnologias Sugeridas:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gerar as imagens em formato portável entre plataformas
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RNF03 - Desempenho:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A geração e a verificação de percolação de uma malha de 
+\begin_inset Formula $500\times500$
+\end_inset
+
+ devem ocorrer em menos de 
+\begin_inset Formula $1$
+\end_inset
+
+ segundo
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RNF04 - Usabilidade:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A interface deve seguir princípios de design limpo (UI/UX),
+ utilizando textos claros,
+ disponibilizando manuais simplificados
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+RN - Regras de Negócio
+\end_layout
+
+\begin_layout Itemize
+RN01 - Vizinhança:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Para a formação de um 
+\emph on
+cluster
+\emph default
+,
+ a conexão entre sítios deve considerar apenas a vizinhança de von Neumann (vizinhos diretos:
+ cima,
+ baixo,
+ esquerda,
+ direita).
+ Diagonais não formam conexões contínuas
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+RN02 - Limites de Entrada:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O sistema não deve aceitar valores de 
+\begin_inset Formula $Mx,Ny$
+\end_inset
+
+ menores que 
+\begin_inset Formula $2$
+\end_inset
+
+ ou maiores que um limite seguro estabelecido pelo hardware do cliente (ex:
+ 
+\begin_inset Formula $10000$
+\end_inset
+
+).
 \end_layout
 
 \end_deeper
 \end_deeper
+\end_deeper
 \begin_layout Itemize
-CLÁUSULA 3 - PRAZOS E CRONOGRAMA (SPRINT)
+CLÁUSULA 3 - PRAZOS E CRONOGRAMA (
+\emph on
+SPRINT
+\emph default
+)
 \end_layout
 
 \begin_deeper
@@ -570,9 +981,17 @@ Cliente:
 
 \begin_deeper
 \begin_layout Itemize
-Elabora e entrega o Documento de Escopo
+Elabora e entrega o documento 
+\begin_inset Quotes eld
+\end_inset
+
+ESCOPO DO PROBLEMA DE ENGENHARIA
+\begin_inset Quotes erd
+\end_inset
+
+
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Problema vinculado ao curso de engenharia
@@ -580,8 +999,16 @@ Problema vinculado ao curso de engenharia
 
 \end_inset
 
- e Requisitos,
- contendo 1 ou 2 cenários textuais de uso.
+,
+ detalhando 
+\series bold
+Objetivo,
+ Público-Alvo,
+ Especificação,
+ Cenários,
+ Requisitos
+\series default
+.
  
 \end_layout
 
@@ -593,8 +1020,11 @@ Executor (Pré-venda):
 
 \begin_deeper
 \begin_layout Itemize
-Monta a Proposta Técnica contendo Orçamento Preliminar,
- primeira versão do Diagrama de Casos de Uso (Concepção) e esboço do Diagrama de Classes (Domínio) e Diagrama de Sequência(rascunho).
+Monta a Proposta Técnica contendo a experiência da equipe,
+ uma elaboração preliminar do problema (o que entenderam),
+ primeira versão do Diagrama de Casos de Uso (Concepção),
+ esboço do Diagrama de Classes (Domínio) e primeiro rascunho do Diagrama de Sequência.
+ Orçamento e Cronograma Preliminar.
 \end_layout
 
 \begin_layout Itemize
@@ -613,6 +1043,10 @@ Cliente (Em casa):
 Revisão da proposta enviada pelo executor e preparação de dúvidas.
 \end_layout
 
+\begin_layout Itemize
+Verificar se houve um claro entendimento do problema a ser resolvido.
+\end_layout
+
 \end_deeper
 \end_deeper
 \begin_layout Itemize
@@ -628,14 +1062,18 @@ Reunião Formal:
 
 \begin_deeper
 \begin_layout Itemize
-Executor apresenta competências da equipe(projetos desenvolvidos - marketing);
- soluções arquiteturais(modelos uml),
+Executor apresenta competências da equipe (histórico de projetos desenvolvidos - 
+\emph on
+marketing
+\emph default
+);
+ soluções arquiteturais desenvolvidas (modelos uml),
  orçamento e cronograma preliminar.
 \end_layout
 
 \begin_layout Itemize
-Cliente analisa,
- aprofunda os requisitos técnicos(cálculos,
+Cliente analisa a proposta,
+ verifica e aprofunda os requisitos técnicos (cálculos,
  física,
  química,
  engenharia) e valida a viabilidade técnica.
@@ -647,8 +1085,9 @@ Negociação e Assinatura deste Contrato
 status open
 
 \begin_layout Plain Layout
-usem o govbr;
- este contrato não tem valor legal é um exemplo de sala de aula
+simulem de fato,
+ para assinar usem o govbr;
+ Este contrato não tem valor legal é um exemplo de sala de aula
 \end_layout
 
 \end_inset
@@ -665,19 +1104,51 @@ Executor (Em casa):
 \begin_deeper
 \begin_layout Itemize
 Configuração oficial do Repositório Git/GitHub (aplicação de versionamento inicial).
+ Clonar o 
+\begin_inset CommandInset href
+LatexCommand href
+name "repositório modelo"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-3-MicroProjetoSoftware-TituloProjeto"
+literal "false"
+
+\end_inset
+
+,
+ adicionar membros (clientes e equipe desenvolvimento).
 \end_layout
 
 \begin_layout Itemize
 Execução da fase de Elaboração:
+ Estudo do problema.
  Montagem do Diagrama de Pacotes / Assuntos.
 \end_layout
 
 \begin_layout Itemize
 Consolidação da Análise OO:
- Montagem dos Diagramas de Casos de Uso Específicos,
- Classes,
- Sequência (cenários principais),
- Comunicação e Máquina de Estado.
+ Montagem dos Diagramas de Casos de Uso Geral e Específicos,
+ Diagrama de assuntos e pacotes.
+ Diagrama de Classes,
+ Diagramas de Sequência (cenários principais),
+ Diagrama de Comunicação e Diagrama de Máquina de Estado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Documentação para apresentação formal.
+\end_layout
+
+\begin_layout Itemize
+Entrega:
+ Registro das atividades (
+\emph on
+checklist
+\emph default
+,
+ 
+\emph on
+commit
+\emph default
+) e envio dos dados via repositório do projeto.
 \end_layout
 
 \end_deeper
@@ -712,12 +1183,26 @@ Executor (Em casa):
 \begin_layout Itemize
 Definições de Projeto do Sistema:
  Definição formal de Arquitetura,
- Bibliotecas (Polinômios/Estatística) e encapsulamento em C++.
+ Bibliotecas (Polinômios/Estatística) e encapsulamento em C++
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+O cliente exige C++ porque quer alto desempenho e economia de energia (é um ambientalista).
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
 Projeto OO:
- Criação do Diagrama de Componentes e Diagrama de Implantação (hardware/cluster).
+ Criação do Diagrama de Componentes e Diagrama de Implantação (
+\emph on
+hardware/cluster
+\emph default
+).
 \end_layout
 
 \begin_layout Itemize
@@ -728,7 +1213,11 @@ Revisão e refatoração de todos os diagramas UML com base na arquitetura defin
 \end_deeper
 \begin_layout Itemize
 Dia 4:
- Entrega da Modelagem Abrangente e Montagem do Backlog (Reunião Formal)
+ Entrega da Modelagem Abrangente e Montagem do 
+\emph on
+Backlog
+\emph default
+ - Lista de Características (Reunião Formal)
 \end_layout
 
 \begin_deeper
@@ -740,11 +1229,39 @@ Reunião Formal:
 \begin_deeper
 \begin_layout Itemize
 Executor apresenta a documentação final do Ciclo de Concepção e Análise.
+ Inclui documento formal com descrição de todas as etapas desenvolvidas.
+ O Executor extrai dos modelos UML aprovados e entrega a Lista de Características (Backlog do Produto),
+ fatiando o escopo em entregas 
+\begin_inset Formula $c_{1},c_{2}...c_{n}$
+\end_inset
+
+,
+ habilitando o início imediato do Ciclo de Planejamento e Construção Iterativa.
 \end_layout
 
 \begin_layout Itemize
 Cliente:
- Realiza o aceite técnico formal da documentação e decide sobre a continuidade para a fase de codificação.
+ comenta,
+ critica,
+ realiza o aceite técnico formal da documentação entregue e decide sobre a continuidade da mesma empresa/equipe para os ciclos de planejamento e construção
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se o resultado é satisfatório contrate para próxima etapa;
+ se for mediano ruim,
+ seja gentil,
+ mas não de continuidade,
+ procure outra equipe para dar continuidade.
+ Nada de tapinha nas costas,
+ se ficou insatisfeito procure outra equipe,
+ haja com profissionalismo,
+ afinal de contas você tem um chefe.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -753,11 +1270,12 @@ Marco Final (
 Deliverable
 \emph default
 ):
- O Executor extrai dos modelos UML aprovados e entrega a Lista de Características (Backlog do Produto),
- fatiando o escopo em entregas $c_1,
- c_2...
- c_n$,
- habilitando o início imediato do Ciclo de Planejamento e Construção Iterativa.
+ Documento final com todos os diagramas e o 
+\emph on
+Backlog
+\emph default
+ - Lista de Características.
+ Tudo atualizado e armazenado no repositório do projeto.
 \end_layout
 
 \end_deeper
@@ -769,18 +1287,19 @@ CLÁUSULA 4 - CUSTOS E CONDIÇÕES DE PAGAMENTO
 
 \begin_deeper
 \begin_layout Itemize
-A remuneração pelo projeto baseia-se no esforço de engenharia empregado na especificação e codificação.
+A remuneração pelo projeto baseia-se no esforço de engenharia empregado na especificação,
+ modelagem,
+ testes lógicos e documentação,
+ eventualmente alguma codificação.
 \end_layout
 
 \begin_layout Itemize
-4.1.
- Valor da Hora de Engenharia de Software:
+Valor da Hora de Engenharia de Software:
  R$ 350,00.
 \end_layout
 
 \begin_layout Itemize
-4.2.
- Custo Total Estimado para o MVP (
+Custo Total Estimado para o MVP (
 \emph on
 Minimum Viable Product
 \emph default
@@ -789,8 +1308,7 @@ Minimum Viable Product
 \end_layout
 
 \begin_layout Itemize
-4.3.
- Os recursos computacionais físicos para compilação e teste final são de inteira responsabilidade da CONTRATADA.
+Os recursos computacionais físicos para compilação e teste final são de inteira responsabilidade da CONTRATADA.
 \end_layout
 
 \end_deeper
@@ -800,8 +1318,7 @@ CLÁUSULA 5 - REQUISITOS TECNOLÓGICOS E EFICIÊNCIA ENERGÉTICA
 
 \begin_deeper
 \begin_layout Itemize
-Fica estabelecido que a implementação final da arquitetura modelada deverá ser conduzida na linguagem C++ (padrões modernos 20,
- 23 ou 26).
+Fica estabelecido que a implementação final da arquitetura modelada deverá ser conduzida na linguagem C++ (padrões modernos C++ 26 ou mais recente).
  Esta exigência contratual é inegociável e visa garantir não apenas a máxima performance de execução (cálculos massivos de engenharia),
  mas também a eficiência energética e ecológica,
  mitigando o desperdício de processamento,
@@ -816,16 +1333,14 @@ CLÁUSULA 6 - SIGILO E PROPRIEDADE INTELECTUAL
 \begin_deeper
 \begin_layout Itemize
 A CONTRATADA compromete-se a manter absoluto sigilo sobre os dados de campo,
- perfis de poços e amostras de laboratório fornecidos pela CONTRATANTE.
+ dados laboratoriais,
+ e amostras de laboratório fornecidos pela CONTRATANTE que tenham a marcação SIGILOSA.
  
 \end_layout
 
 \begin_layout Itemize
-O código-fonte C++ desenvolvido e a modelagem UML (diagramas e arquivos LyX) serão de propriedade exclusiva da CONTRATANTE após o aceite final.
-\end_layout
-
-\begin_layout Itemize
-Todo o projeto é armazenado e disponibilizado sobre a licença GPL no site 
+A modelagem UML (diagramas e arquivos LyX),
+ e o código-fonte desenvolvido em C++ serão disponibilizados sobre a licença GPL no site 
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.github/ldsc"
@@ -833,7 +1348,7 @@ literal "false"
 
 \end_inset
 
-
+ em repositório específico a ser criado.
 \end_layout
 
 \end_deeper
@@ -844,14 +1359,15 @@ CLÁUSULA 7 - FORO
 \begin_deeper
 \begin_layout Itemize
 Fica eleito o foro da sala de aula,
- juiz Prof.
+ Juiz Prof.
+ André D.
  Bueno,
  para dirimir quaisquer controvérsias oriundas da execução deste contrato de engenharia.
 \end_layout
 
 \begin_layout Itemize
 Macaé - RJ,
- ____ de ___________________ de 2026.
+ ____ de ___________________ de 202_.
 \end_layout
 
 \end_deeper
@@ -869,7 +1385,13 @@ Grupo:
 \end_layout
 
 \begin_layout Standard
-Assinaturas:
+Engenheiro _______________________ Assinatura:
+ _______________________ 
+\end_layout
+
+\begin_layout Standard
+Engenheiro _______________________ Assinatura:
+ _______________________ 
 \end_layout
 
 \begin_layout Standard
@@ -886,15 +1408,21 @@ Grupo:
 \end_layout
 
 \begin_layout Standard
-Assinaturas:
+Engenheiro _______________________ Assinatura:
+ _______________________ 
 \end_layout
 
 \begin_layout Standard
-_________________________________________
+Engenheiro _______________________ Assinatura:
+ _______________________ 
 \end_layout
 
 \begin_layout Standard
-Testemunha / Gestor de Projeto (Professor)
+_____________________________________________ 
+\end_layout
+
+\begin_layout Standard
+Testemunha / Gestor de Projeto (Professor André Bueno)
 \end_layout
 
 \end_body
